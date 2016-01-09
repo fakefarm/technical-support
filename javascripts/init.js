@@ -1,0 +1,1 @@
+$(document).ready(function(){verticalTabs();var c=$("#click-abc");c.on("click",function(){$(".abc-summary").show(),c.hide()})});
