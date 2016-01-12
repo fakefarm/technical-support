@@ -1,0 +1,53 @@
+<section class='l-container content'>
+  <!-- _dw -->
+  <div id='three'></div>
+  <section class='module about'>
+    <!-- _dw -->
+    <h1><%= tix_number_title('3', 'API Connection') %></h1>
+    <div class='image'>
+      <!-- _dw -->
+      <%= image_tag 'animores/turtle.jpg' %>
+    </div>
+    <div class='copy'>
+      <div class='customer_email'>
+        <h2>API</h2>
+        <!-- _dw -->
+        <p>Hi GitHub!</p>
+        <p>Can you show me how to make an authenticated API request?</p>
+        <p>Thanks!</p>
+        <p>newerthanyou</p>
+      </div>
+    </div>
+        <div class='image'>
+      <%= image_tag 'tall.jpg' %>
+    </div>
+    <div class='copy'>
+      <!-- _dw -->
+      <hr>
+      <div class='response'>
+        <!-- _dw -->
+
+
+      <p>Hey newerthanyou -</p>
+      <p>Are you familiar with <a href="http://conqueringthecommandline.com/book/curl" title="">cURL</a>, the command line tool? Here's an example;</p>
+
+
+      <p class='code-snippet'>
+        $ curl --user "woodall" https://api.github.com/users/woodall/followers<br>
+        > Enter host password for user 'woodall': [password]
+      </p>
+
+      <p>In my example, I have <code>woodall</code> as the username. </p>
+      <p>So, swap <code>woodall</code> to whatever your username is;</p>
+
+
+      <p>I recommend bookmarking the <a href="https://developer.github.com/v3/" title="API Overview">API Overview</a> as it's a great reference for what you can accomplish. Please let me know if you need help beyond that.</p>
+
+      <p>Good luck!</p>
+
+
+      <%= partial 'shared/signature' %>
+      <!-- _dw -->
+    </div>
+  </section>
+</section> <!-- question 1 -->

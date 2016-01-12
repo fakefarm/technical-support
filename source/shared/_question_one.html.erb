@@ -1,0 +1,65 @@
+<section class='l-container content'>
+  <!-- _dw -->
+  <div id='one'></div>
+  <span id='about'></span>
+  <section class='module about'>
+    <!-- _dw -->
+    <h1><%= tix_number_title('1', 'Rebase guidance') %></h1>
+    <div class='image'>
+      <!-- _dw -->
+      <%= image_tag 'animores/crab.jpg' %>
+    </div>
+    <div class='copy'>
+      <div class='customer_email'>
+        <!-- _dw -->
+        <h2>Rejected pull request from fork</h2>
+        <p>To start, I have to say I LOVE GITHUB. You guys rock. I was at your 4th birthday party, thanks for the cupcake and booze!</p>
+
+        <p>Anyway, here's my problem. I sent a pull request to technoweenie, and he rejected it because my master branch is out of sync. What can I do to fix this?</p>
+
+        <p>Help me supportocat, you're my only hope!</p>
+
+        <p>/.Steve</p>
+      </div>
+    </div>
+        <div class='image'>
+      <%= image_tag 'tall.jpg' %>
+    </div>
+    <div class='copy'>
+      <!-- _dw -->
+      <div id='ticket_one_answer'></div>
+      <hr>
+      <div class='response'>
+        <!-- _dw -->
+        <p>Hi Steve, </p>
+        <p><i>
+          We're excited to have you and your support! Nothing says 'celebrate' like chocolate and liquor! :-D
+          </i>
+        </p>
+
+        <p>
+          Correcting an out of sync branch is a two-step fix. First, get the latest code from master. This assumes <code>master</code> is pointed to technoweenie's branch
+        </p>
+
+        <p class='code-snippet'>
+          $ git pull origin master
+        </p>
+        <p>
+          Then,
+        </p>
+        <p class='code-snippet'>
+          $ git rebase -i origin/master
+        </p>
+        <p>
+          Rebasing is the term for adding your code to the most recent <code>master</code>. The <code>-i</code> means <i>interactive</i> so you can squash commits into one, which is what is typically preferred.
+        </p>
+        <p>
+          There's a great post titled <a href="https://help.github.com/articles/about-git-rebase/" title="">about git rebase</a>
+           that covers a lot of this. Feel free to <a href="https://github.com/woodall/technical-support/issues/new?title=Ticket%201%20response%20from%20@steve&body=my%20master%20branch%20is%20out%20of%20sync.%20What%20can%20I%20do%20to%20fix%20this?" title="">send me an issue</a> and we can work through this together if you run into any more problems.
+        </p>
+        <%= partial 'shared/signature' %></div>
+      </div>
+      <!-- _dw -->
+    </div>
+  </section>
+</section> <!-- question 1 -->

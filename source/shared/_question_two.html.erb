@@ -1,0 +1,62 @@
+<section class='l-container content'>
+  <!-- _dw -->
+  <div id='two'></div>
+  <span id='about'></span>
+  <section class='module about'>
+    <!-- _dw -->
+    <h1><%= tix_number_title('2', 'Adding Remotes') %></h1>
+    <div class='image'>
+      <!-- _dw -->
+      <%= image_tag 'animores/squid.jpg' %>
+    </div>
+    <div class='copy'>
+      <div class='customer_email'>
+        <!-- _dw -->
+        <h2>Syncing internal server and GitHub?</h2>
+        <p>
+          Hi GitHub! My company has an internal Git server used for deployments, we use GitHub, and I work on a local copy of the repository. For workflow purposes, how do I sync my repository to GitHub and the internal Git server?
+        </p>
+        <p>Thanks,</p>
+        <p>vmg</p>
+
+      </div>
+    </div>
+        <div class='image'>
+      <%= image_tag 'tall.jpg' %>
+    </div>
+    <div class='copy'>
+      <!-- _dw -->
+      <hr>
+      <div class='response'>
+        <!-- _dw -->
+
+        <p>Hey VMG,</p>
+        <p>How's your day going?</p>
+
+        <p>To connect your local repo to any remote server first get to the <code> root</code> directory and run the following </p>
+
+        <p class='code-snippet'>
+        $ git remote add origin internal-server [repo url]
+        </p>
+
+        <p>then for a GitHub remote</p>
+
+
+        <p class='code-snippet'>
+        $ git remote add origin github [repo url]
+        </p>
+
+        <p><i>note the [repo url] is usually the SSH address like</i></p>
+
+
+        <p class='code-snippet'>
+        git@github.com:vmg/name-of-repo
+        </p>
+
+        <p>Here's a short post titled <a href="https://help.github.com/articles/adding-a-remote/" title="Adding a remote">Adding a remote</a>  which goes into more detail.
+        </p>
+      <%= partial 'shared/signature' %>
+      <!-- _dw -->
+    </div>
+  </section>
+</section> <!-- question 1 -->

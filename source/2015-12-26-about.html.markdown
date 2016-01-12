@@ -1,0 +1,12 @@
+---
+title: about
+snip: "Written by Dave Woodall at wwwooodall.com"
+date: 2015-12-26 04:05 UTC
+---
+
+# About
+
+This is one way to write an about page. What if I needed a template for me and my other code friends? Could I then create a marketing page like mm.wwwoodall.com?
+
+I've been building my own page for a while and I think one benefit to multi-page views (or apps) is they give the individual the chance to digest your information if they're interested.
+

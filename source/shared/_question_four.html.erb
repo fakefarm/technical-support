@@ -1,0 +1,67 @@
+<section class='l-container content'>
+  <!-- _dw -->
+  <div id='four'></div>
+  <span id='about'></span>
+  <section class='module about'>
+    <!-- _dw -->
+    <h1><%= tix_number_title('4', 'Fork Policy') %></h1>
+    <div class='image'>
+      <!-- _dw -->
+      <%= image_tag 'animores/dog.jpg' %>
+    </div>
+    <div class='copy'>
+      <div class='customer_email'>
+        <h2>Unhappy about forking</h2>
+        <!-- _dw -->
+        <p>JamesTK here, I have another question.</p>
+
+        <p>One of my dev collaborator forked my private repo without explicit permission to do so... is that typical? I am surprised that the system did not notify me if it was okay to grant the fork permission. Is there a way to setup permissions of this sort? Also, other than asking the collaborator to delete the forked repo, can I actually delete it?</p>
+
+        <p>Thanks, jamestk</p>
+      </div>
+    </div>
+        <div class='image'>
+      <%= image_tag 'tall.jpg' %>
+    </div>
+    <div class='copy'>
+      <!-- _dw -->
+      <hr>
+      <div class='response'>
+        <!-- _dw -->
+
+        <p>James, </p>
+
+        Collaborators have the ability to fork repos they contribute to since <p>forking is a key component to team collaboration. If you remove the collaborator from your private repo, this
+        <a href="https://github.com/blog/2034-greater-control-over-forks-of-your-private-repositories" title="">will also remove the collaborator's fork</a>
+ <i>However, that is really for situations where the collaborator no longer works on the project.</i></p>
+
+        <p>Regarding;</p>
+
+        <p>
+          <i>
+            Is there a way to setup permissions of this sort?
+          </i>
+        </p>
+
+        <p>Great question! Any new private repo you create begins with only yourself. 'Permissions' are a topic of team management. Here are two resources for help with that:</p>
+
+        <p>1. Intro to <a href="https://help.github.com/articles/setting-up-teams/" title="">setting up teams</a>.</p>
+        <p>2. Ongoing management and <a href="https://help.github.com/articles/maintaining-teams/" title="maintaining teams">maintaining teams</a>.</p>
+
+        <p>Lastly;</p>
+
+        <p>
+          <i>
+            Also, other than asking the collaborator to delete the forked repo, can I actually delete it?
+          </i>
+        </p>
+
+        <p>Unfortunately you are not able to delete another user's fork. You might find this <a href="https://help.github.com/articles/fork-a-repo/" title="forking">page about forking</a> helpful to get a better idea how the relationship works.</p>
+
+        <p>I'm here if you get stuck!</p>
+
+      <%= partial 'shared/signature' %>
+      <!-- _dw -->
+    </div>
+  </section>
+</section> <!-- question 1 -->

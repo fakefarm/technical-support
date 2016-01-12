@@ -1,0 +1,19 @@
+.l-container {
+  // @include outer-container;
+  @include media($medium-screen) {
+    max-width: 64em;
+  }
+}
+
+.l-skinny-col {
+  @include media($medium-screen) {
+    @include span-columns(3);
+  }
+}
+
+.l-fat-col {
+  @include media($medium-screen) {
+    @include span-columns(8);
+  }
+}
+

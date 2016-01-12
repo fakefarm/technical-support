@@ -1,0 +1,264 @@
+@import 'bourbon';
+@import 'neat';
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+// padding, pixels, weights
+
+$limited_space: 0em;
+$default_space: 1em;
+$extra_space:   2em;
+$line_weight:   3px;
+$subtle_radius: 3px;
+$line_type:     solid;
+
+$font_size_4:   4em;
+$font_size_3:   3em;
+$font_size_2:   2em;
+$font_size_1:   1em;
+
+// breakpoints
+$tablet:        461px;
+$laptop:        761px;
+$display:       1261px;
+
+// colors
+$white: rgba(255,255,255,0.5);
+$gray:       #004080;
+$light_gray: #eee;
+$eggplant:   #800080;
+$pink:       #F2DDE6;
+$green:      #00A050;
+
+// typography
+$sanserif: 'helvetica neue', helvetica, arial;
+$lucida: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+
+
+// Mixins
+// Able to use raw HTML elements
+// Use variables for measurements
+
+@mixin text_right { text-align: right; }
+
+@mixin paragraph {
+  background: $white;
+  font-size: $default_space;
+  font-family: $lucida;
+  padding: $extra_space 0;
+  line-height: 25px;
+}
+
+@mixin rounded_background_dark {
+  background: $light_gray;
+  border-radius: $line_weight;
+}
+
+@mixin container {
+  padding: $extra_space;
+  background: $light_gray;
+  margin: $extra_space;
+  border: $line_weight $line_type $gray;
+  margin: 0;
+}
+
+@mixin list {
+  ul {
+    color: $eggplant;
+    background: $pink;
+    padding-left: $default_space;
+    padding-top: $default_space;
+    padding-bottom: $default_space;
+  }
+  li {
+    font-size: $default_space;
+    margin: $default_space $limited_space $limited_space $limited_space;
+  }
+}
+
+@mixin button {
+  background: $green;
+  color: white;
+  border-radius: $subtle_radius;
+  font-family: $sanserif;
+  font-size: $font_size_4;
+  font-weight: 100;
+  letter-spacing: 3px;
+  padding: $default_space;
+  display: inline-block;
+  cursor: pointer;
+  &:hover {
+    background: $eggplant;
+  }
+}
+
+@mixin dynamic {
+  opacity: 0;
+  font-size: 0;
+}
+@mixin active {
+  opacity: 1 !important;
+  font-size: inherit !important;
+}
+
+@mixin unstyled_collection {
+  border: none;
+  padding: 0;
+  margin-left: 0;
+}
+
+@mixin col_2 {
+  @include media(min-width $tablet) {
+    @include span-columns(6);
+  }
+}
+
+@mixin split-screen {
+  @include span-columns(12);
+  @include media(min-width $tablet) {
+    @include span-columns(6);
+  }
+}
+
+@mixin app {
+  padding: $default_space;
+}
+
+@mixin title {
+  font-size: $font_size_1;
+  @include media(min-width $tablet) {
+    font-size: $font_size_3;
+  }
+}
+
+// FIX
+@mixin fadeIn {
+//   margin_left: 0;
+//   @include transition(all 300ms ease_in);
+}
+
+// .animated {
+//   @include transition(all 300ms ease_in);
+// }
+
+@mixin welcome_title { color: $eggplant; }
+
+@mixin collection { @include row(); }
+
+._scope_ {
+  &.app { @include app }
+  &.page {}
+  &.collection { @include collection }
+  &.unit {} //-> use .unit
+}
+
+._pattern_ {
+  &.container { @include container }
+  &.button    { @include button    }
+  &.paragraph { @include paragraph }
+  &.list      { @include list      }
+  &.grid      {}
+  &.title     { @include title }
+  &.image     {}
+  &.split-screen { @include split-screen }
+}
+
+
+.unit {
+  margin-bottom: $default_space;
+  &.rounded_background_dark { @include rounded_background_dark }
+  &.welcome_title { @include welcome_title; }
+  &.welcome_message { font-size: $font_size_2; }
+  &.welcome-btn {}
+  &.collection-title {
+    font-size: $font_size_3;
+  }
+}
+
+._responsive_ {
+  &.col_1 {}
+  &.col_2 {}
+  &.hide  {}
+}
+
+._state_ {
+  &.active  { @include active; }
+  &.dynamic { @include dynamic; }
+  &.alarm   {}
+}
+
+._overrides_ {
+  &.text_right { @include text_right; }
+}
+
+._animated_ {
+  &.fadeIn{ @include fadeIn; }
+}
+
+@mixin columns_one {
+  @include span-columns(12);
+  @include media(min-width $tablet) {
+    @include span-columns(12);
+  }
+}
+
+._columns_ {
+  &.one { @include columns_one}
+}
+
+._responsive_ {
+  &.hide-mobile {
+    display: none;
+    @include media(min-width $tablet) {
+      display: block;
+    }
+  }
+  &.hide-tablet {
+    display: none;
+    @include media(min-width $laptop) {
+      display: block;
+    }
+  }
+  &.col_1 { @include span-columns(12); }
+  &.col_2 { @include col_2; }
+}
+
